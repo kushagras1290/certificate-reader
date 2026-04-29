@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "certificate-reader"
+version = "0.1.0"
+description = "Extract gem certificate data from ZIP archives with a vision model and export CSV."
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.99.0",
+]
+
+[project.scripts]
+certificate-reader = "certificate_reader.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["certificate_reader*"]
+
